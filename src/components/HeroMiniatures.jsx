@@ -21,7 +21,7 @@ function HeroMiniatures() {
             path: '/exclusivos'
         },
         {
-            imgSrc: '/hero_perfumes_miniatura.webp',
+            imgSrc: '/hero_perfumes_decants.webp',
             imgAlt: 'Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.',
             title: 'Decants de Perfumes',
             description: 'Descubre y prueba perfumes de las mejores marcas con nuestros decants seleccionados.',
