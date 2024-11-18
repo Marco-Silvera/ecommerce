@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 function HeroExclusives() {
 
@@ -57,10 +58,10 @@ function HeroExclusives() {
         <div className="relative w-full rounded-lg overflow-hidden">
             <div className="relative min-h-[50svh] w-full">
                 {slides.map((slide, index) => (
-                    <a
+                    <Link
                         key={index}
                         className={`absolute inset-0 transition-opacity duration-1000 cursor-pointer ${index === currentSlideIndex ? 'opacity-100' : 'opacity-0'}`}
-                        href={slide.path}
+                        to={slide.path}
                     >
                         <div className="lg:px-32 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 bg-gradient-to-t from-neutral-950/85 to-transparent px-16 py-12 text-center">
                             <h3 className="w-full lg:w-[80%] text-balance text-2xl lg:text-3xl font-bold text-white">{slide.title}</h3>
@@ -71,7 +72,7 @@ function HeroExclusives() {
                             src={slide.imgSrc}
                             alt={slide.imgAlt}
                         />
-                    </a>
+                    </Link>
                 ))}
             </div>
             <button
