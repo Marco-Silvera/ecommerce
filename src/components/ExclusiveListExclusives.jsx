@@ -109,8 +109,8 @@ function ExclusiveListExclusives() {
                     </div>
                     <section className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10">
                         {filteredExclusives.length > 0 ? (
-                            filteredExclusives.map((exclusive) => (
-                                <ExclusiveCardExclusives key={exclusive.id} exclusive={exclusive} />
+                            filteredExclusives.map((exclusiveIterator) => (
+                                <ExclusiveCardExclusives key={exclusiveIterator.id} exclusive={exclusiveIterator} />
                             ))
                         ) : (
                             <div className="col-span-full text-center py-4">

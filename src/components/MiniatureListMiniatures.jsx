@@ -102,7 +102,7 @@ function MiniatureListMiniature() {
                             <input
                                 type="text"
                                 className="p-2 pl-8 border rounded-md text-sm lg:text-base outline-none"
-                                placeholder="Buscar miniature..."
+                                placeholder="Buscar miniatura..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -111,8 +111,8 @@ function MiniatureListMiniature() {
                     <section className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10">
                         {/* Renderizar miniatures filtrados */}
                         {filteredMiniatures.length > 0 ? (
-                            filteredMiniatures.map((miniature) => (
-                                <MiniatureCardMiniatures key={miniature.id} miniature={miniature} />
+                            filteredMiniatures.map((miniatureIterator) => (
+                                <MiniatureCardMiniatures key={miniatureIterator.id} miniature={miniatureIterator} />
                             ))
                         ) : (
                             <div className="col-span-full text-center py-4">

@@ -116,6 +116,13 @@ function Header() {
                                 className="hover:bg-gray-200 xl:hover:bg-transparent w-full h-10 xl:w-auto xl:h-auto"
                             >
                                 <Link
+                                    to={`/cart`}
+                                    className="text-gray-600 hover:text-gray-900 text-base font-medium transition-colors h-full w-ful flex items-center justify-center">Carrito</Link>
+                            </li>
+                            <li
+                                className="hover:bg-gray-200 xl:hover:bg-transparent w-full h-10 xl:w-auto xl:h-auto"
+                            >
+                                <Link
                                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline h-full w-ful flex items-center justify-center"
                                     to={isLoggedIn ? "/dashboard" : "/login"}>
                                     {isLoggedIn ? "Dashboard" : "Login"}

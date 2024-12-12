@@ -20,6 +20,8 @@ import MiniatureDetailPage from './pages/MiniatureDetailPage';
 import DecantDetailPage from './pages/DecantDetailPage';
 import Envios from './pages/Envios';
 import Testers from './pages/Testers';
+import { CartContextProvider } from './context/CartContext';
+import Cart from './pages/Cart';
 
 function App() {
   const navigate = useNavigate();
@@ -42,23 +44,26 @@ function App() {
         <ExclusiveContextProvider>
           <DecantContextProvider>
             <MiniatureContextProvider>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/:path" element={<PerfumeDetailPage />} />
-                <Route path="/testers" element={<Testers />} />
-                <Route path="/tester/:path" element={<PerfumeDetailPage />} />
-                <Route path="/exclusivos/:path" element={<ExclusiveDetailPage />} />
-                <Route path="/exclusivos" element={<Exclusives />} />
-                <Route path="/miniaturas/:path" element={<MiniatureDetailPage />} />
-                <Route path="/decants" element={<Decants />} />
-                <Route path="/decants/:path" element={<DecantDetailPage />} />
-                <Route path="/miniaturas" element={<Miniatures />} />
-                <Route path='/envios' element={<Envios />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <CartContextProvider>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/:path" element={<PerfumeDetailPage />} />
+                  <Route path="/testers" element={<Testers />} />
+                  <Route path="/tester/:path" element={<PerfumeDetailPage />} />
+                  <Route path="/exclusivos/:path" element={<ExclusiveDetailPage />} />
+                  <Route path="/exclusivos" element={<Exclusives />} />
+                  <Route path="/miniaturas/:path" element={<MiniatureDetailPage />} />
+                  <Route path="/decants" element={<Decants />} />
+                  <Route path="/decants/:path" element={<DecantDetailPage />} />
+                  <Route path="/miniaturas" element={<Miniatures />} />
+                  <Route path='/envios' element={<Envios />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </CartContextProvider>
             </MiniatureContextProvider>
           </DecantContextProvider>
         </ExclusiveContextProvider>

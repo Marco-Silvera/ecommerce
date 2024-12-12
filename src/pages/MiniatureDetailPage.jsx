@@ -5,11 +5,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MiniatureGallery from '../components/MiniatureGallery';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 function PerfumeDetailPage() {
     const { path } = useParams();
     const [miniature, setMiniature] = useState(null);
     const [loading, setLoading] = useState(true);
+    const { addCart } = useCart();
 
     useEffect(() => {
         const fetchMiniature = async () => {
@@ -38,6 +40,11 @@ function PerfumeDetailPage() {
     if (loading) return <div className='h-screen flex items-center justify-center font-light italic'>Cargando...</div>;
 
     if (!miniature) return <div className='h-screen flex items-center justify-center font-light italic'>Miniatura no encontrada.</div>;
+
+    const handleAddToCart = () => {
+        addCart(miniature);
+        alert(`${miniature.name} fue añadido al carrito.`)
+    }
 
     return (
         <section className='flex flex-col min-h-screen'>
@@ -75,6 +82,11 @@ function PerfumeDetailPage() {
                                         Lo quiero
                                     </p>
                                 </a>
+                                <button 
+                                onClick={handleAddToCart}
+                                className='bg-blue-600 text-white py-2 px-5 rounded-lg hover:bg-blue-700 transition'>
+                                Añadir al carrito:
+                                </button>
                             </div>
                         </div>
                         <p className='text-center text-sm mt-5'>

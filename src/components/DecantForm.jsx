@@ -22,7 +22,23 @@ function DecantForm() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        createDecant(decantName, decantDescription, decantPath, decantGender, decantBrand, decantConcentration, decantSize, decantSizeTwo, decantSizeThree, decantPrice, decantPriceTwo, decantPriceThree, decantImage, decantImageTwo, decantImageThree);
+        createDecant(
+            decantName,
+            decantDescription,
+            decantPath,
+            decantGender,
+            decantBrand,
+            decantConcentration,
+            decantSize,
+            decantSizeTwo,
+            decantSizeThree,
+            decantPrice,
+            decantPriceTwo,
+            decantPriceThree,
+            decantImage,
+            decantImageTwo,
+            decantImageThree
+        );
         setDecantName('')
         setDecantDescription('')
         setDecantPath('')

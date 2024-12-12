@@ -107,8 +107,8 @@ function DecantListDecants() {
                     </div>
                     <section className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10">
                         {filteredDecants.slice(0, visibleCount).length > 0 ? (
-                            filteredDecants.slice(0, visibleCount).map((decant) => (
-                                <DecantCardDecants key={decant.id} decant={decant} />
+                            filteredDecants.slice(0, visibleCount).map((decantIterator) => (
+                                <DecantCardDecants key={decantIterator.id} decant={decantIterator} />
                             ))
                         ) : (
                             <div className="col-span-full text-center py-4">

@@ -116,8 +116,8 @@ function PerfumeListHomePage() {
                     </div>
                     <section className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10">
                         {filteredPerfumes.slice(0, visibleCount).length > 0 ? (
-                            filteredPerfumes.slice(0, visibleCount).map((perfume) => (
-                                <PerfumeCardHomePage key={perfume.id} perfume={perfume} />
+                            filteredPerfumes.slice(0, visibleCount).map((perfumeIterator) => (
+                                <PerfumeCardHomePage key={perfumeIterator.id} perfume={perfumeIterator} />
                             ))
                         ) : (
                             <div className="col-span-full text-center py-4">

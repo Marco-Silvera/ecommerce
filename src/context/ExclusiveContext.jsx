@@ -107,7 +107,22 @@ export const ExclusiveContextProvider = ({ children }) => {
 
     }
 
-    return <ExclusiveContext.Provider value={{ exclusives, getExclusives, createExclusive, addingExclusive, addingUpdateExclusive, loadingExclusive, deleteExclusive, displayExclusive, updateExclusive, exclusiveToEdit, setExclusiveToEdit, setSelectedExclusive, selectedExclusive }}>
+    return <ExclusiveContext.Provider
+        value={{
+            exclusives,
+            getExclusives,
+            createExclusive,
+            addingExclusive,
+            addingUpdateExclusive,
+            loadingExclusive,
+            deleteExclusive,
+            displayExclusive,
+            updateExclusive,
+            exclusiveToEdit,
+            setExclusiveToEdit,
+            setSelectedExclusive,
+            selectedExclusive
+        }}>
         {children}
     </ExclusiveContext.Provider>
 }

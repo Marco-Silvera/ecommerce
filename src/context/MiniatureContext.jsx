@@ -99,7 +99,22 @@ export const MiniatureContextProvider = ({ children }) => {
 
     }
 
-    return <MiniatureContext.Provider value={{ miniatures, getMiniatures, createMiniature, addingMiniature, addingUpdateMiniature, loadingMiniature, deleteMiniature, displayMiniature, updateMiniature, miniatureToEdit, setMiniatureToEdit, setSelectedMiniature, selectedMiniature }}>
+    return <MiniatureContext.Provider
+        value={{
+            miniatures,
+            getMiniatures,
+            createMiniature,
+            addingMiniature,
+            addingUpdateMiniature,
+            loadingMiniature,
+            deleteMiniature,
+            displayMiniature,
+            updateMiniature,
+            miniatureToEdit,
+            setMiniatureToEdit,
+            setSelectedMiniature,
+            selectedMiniature
+        }}>
         {children}
     </MiniatureContext.Provider>
 }

@@ -105,7 +105,22 @@ export const PerfumeContextProvider = ({ children }) => {
 
     }
 
-    return <PerfumeContext.Provider value={{ perfumes, getPerfumes, createPerfume, adding, addingUpdate, loading, deletePerfume, displayPerfume, updatePerfume, perfumeToEdit, setPerfumeToEdit, setSelectedPerfume, selectedPerfume }}>
+    return <PerfumeContext.Provider
+        value={{
+            perfumes,
+            getPerfumes,
+            createPerfume,
+            adding,
+            addingUpdate,
+            loading,
+            deletePerfume,
+            displayPerfume,
+            updatePerfume,
+            perfumeToEdit,
+            setPerfumeToEdit,
+            setSelectedPerfume,
+            selectedPerfume
+        }}>
         {children}
     </PerfumeContext.Provider>
 }

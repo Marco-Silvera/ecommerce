@@ -18,7 +18,19 @@ function MiniatureForm() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        createMiniature(miniatureName, miniatureDescription, miniaturePath, miniatureGender, miniatureBrand, miniatureConcentration, miniatureSize, miniaturePrice, miniatureImage, miniatureImageTwo, miniatureImageThree);
+        createMiniature(
+            miniatureName,
+            miniatureDescription,
+            miniaturePath,
+            miniatureGender,
+            miniatureBrand,
+            miniatureConcentration,
+            miniatureSize,
+            miniaturePrice,
+            miniatureImage,
+            miniatureImageTwo,
+            miniatureImageThree
+        );
         setMiniatureName('');
         setMiniatureDescription('');
         setMiniaturePath('');

@@ -22,7 +22,23 @@ function ExclusiveForm() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        createExclusive(exclusiveName, exclusiveDescription, exclusivePath, exclusiveVersion, exclusiveGender, exclusiveBox, exclusiveBrand, exclusiveCollection, exclusiveConcentration, exclusiveSize, exclusivePrice, exclusiveImage, exclusiveImageTwo, exclusiveImageThree, exclusiveImageFour)
+        createExclusive(
+            exclusiveName,
+            exclusiveDescription,
+            exclusivePath,
+            exclusiveVersion,
+            exclusiveGender,
+            exclusiveBox,
+            exclusiveBrand,
+            exclusiveCollection,
+            exclusiveConcentration,
+            exclusiveSize,
+            exclusivePrice,
+            exclusiveImage,
+            exclusiveImageTwo,
+            exclusiveImageThree,
+            exclusiveImageFour
+        )
         setExclusiveName('')
         setExclusiveDescription('')
         setExclusivePath('')

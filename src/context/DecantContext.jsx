@@ -107,7 +107,21 @@ export const DecantContextProvider = ({ children }) => {
 
     }
 
-    return <DecantContext.Provider value={{ decants, getDecants, createDecant, addingDecant, addingUpdateDecant, loadingDecant, deleteDecant, displayDecant, updateDecant, decantToEdit, setDecantToEdit, setSelectedDecant, selectedDecant }}>
+    return <DecantContext.Provider value={{
+        decants,
+        getDecants,
+        createDecant,
+        addingDecant,
+        addingUpdateDecant,
+        loadingDecant,
+        deleteDecant,
+        displayDecant,
+        updateDecant,
+        decantToEdit,
+        setDecantToEdit,
+        setSelectedDecant,
+        selectedDecant
+    }}>
         {children}
     </DecantContext.Provider>
 }

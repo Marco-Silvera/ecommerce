@@ -17,11 +17,11 @@ function Testers() {
                         <img src='/Perfume_tester.webp' className='w-2/3 md:w-1/3' />
                     </article>
                     <article className='flex flex-col gap-5 py-10'>
-                        <h3 className='text-xl lg:text-3xl font-semibold'>¿Qué opinan sobre los perfumes tester?</h3>
-                        <section className='flex flex-col xl:flex-row gap-20 xl:gap-10 py-0 xl:py-10 w-full'>
+                        <h3 className='text-xl lg:text-3xl font-bold text-center'>¿Qué opinan sobre los perfumes tester?</h3>
+                        <section className='flex flex-col xl:flex-row gap-20 xl:gap-10 py-0 xl:py-10 w-full text-center'>
                             <article className='w-full h-full flex flex-col gap-5'>
                                 <div className='h-full min-h-16 xl:min-h-24 flex flex-col gap-2 justify-center'>
-                                    <h4 className='text-lg lg:text-xl'>¿Qué es un perfume TESTER?</h4>
+                                    <h4 className='text-lg lg:text-xl font-semibold'>¿Qué es un perfume TESTER?</h4>
                                     <a className='font-medium text-blue-600 dark:text-blue-500 hover:underline' rel='noreferrer' href='https://www.tiktok.com/@jcparfums' target='_blank'>@jcparfums</a>
                                 </div>
                                 <iframe
@@ -34,7 +34,7 @@ function Testers() {
                             </article>
                             <article className='w-full h-full flex flex-col gap-5'>
                                 <div className='h-full min-h-16 xl:min-h-24 flex flex-col gap-2 justify-center'>
-                                    <h4 className='text-lg lg:text-xl'>Diferencia entre un perfume TESTER y uno de línea</h4>
+                                    <h4 className='text-lg lg:text-xl font-semibold'>Diferencia entre un perfume TESTER y uno de línea</h4>
                                     <a className='font-medium text-blue-600 dark:text-blue-500 hover:underline' rel='noreferrer' href='https://www.tiktok.com/@elgueydelosperfumes' target='_blank'>@elgueydelosperfumes</a>
                                 </div>
                                 <iframe
@@ -47,7 +47,7 @@ function Testers() {
                             </article>
                             <article className='w-full h-full flex flex-col gap-5'>
                                 <div className='h-full min-h-16 xl:min-h-24 flex flex-col gap-2 justify-center'>
-                                    <h4 className='text-lg lg:text-xl'>3 Mitos de los perfumes TESTER</h4>
+                                    <h4 className='text-lg lg:text-xl font-semibold'>3 Mitos de los perfumes TESTER</h4>
                                     <a className='font-medium text-blue-600 dark:text-blue-500 hover:underline' rel='noreferrer' href='https://www.tiktok.com/@rossperfumes' target='_blank'>@rossperfumes</a>
                                 </div>
                                 <iframe

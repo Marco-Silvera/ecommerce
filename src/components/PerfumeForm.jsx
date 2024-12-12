@@ -21,7 +21,22 @@ function PerfumeForm() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        createPerfume(perfumeName, perfumeDescription, perfumePath, perfumeVersion, perfumeGender, perfumeBox, perfumeBrand, perfumeConcentration, perfumeSize, perfumePrice, perfumeImage, perfumeImageTwo, perfumeImageThree, perfumeImageFour)
+        createPerfume(
+            perfumeName,
+            perfumeDescription,
+            perfumePath,
+            perfumeVersion,
+            perfumeGender,
+            perfumeBox,
+            perfumeBrand,
+            perfumeConcentration,
+            perfumeSize,
+            perfumePrice,
+            perfumeImage,
+            perfumeImageTwo,
+            perfumeImageThree,
+            perfumeImageFour
+        )
         setPerfumeName('')
         setPerfumeDescription('')
         setPerfumePath('')

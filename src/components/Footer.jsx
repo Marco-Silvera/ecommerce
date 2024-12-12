@@ -4,18 +4,18 @@ function Footer() {
     return (
         <footer className="bg-white">
             <div className="mx-auto w-full max-w-[1500px] p-4 py-6 lg:py-8">
-                <div className="md:flex md:justify-between">
+                <div className="md:flex md:justify-between md:items-center">
                     <div className="mb-6 md:mb-0">
                         <a href="https://github.com/Marco-Silvera" className="flex items-center">
                             <img src="https://pbs.twimg.com/profile_images/1533454803/isotipo_400x400.jpg" className="h-8 me-3" alt="FlowBite Logo" />
-                            <span className="self-center text-2xl font-semibold whitespace-nowrap">Perfumerias Unidas</span>
+                            <span className="self-center text-lg md:text-2xl font-semibold whitespace-nowrap">Perfumerias Unidas</span>
                         </a>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6">
-                        <div>
+                        <div className='text-center'>
                             <a className="mb-6 text-sm font-semibold text-gray-500 uppercase hover:underline" href='https://github.com/Marco-Silvera' target='_blank'>Instagram</a>
                         </div>
-                        <div>
+                        <div className='text-center'>
                             <a className="mb-6 text-sm font-semibold text-gray-500 uppercase hover:underline" href='https://github.com/Marco-Silvera' target='_blank'>Tiktok</a>
                         </div>
                     </div>
