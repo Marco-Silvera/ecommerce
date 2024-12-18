@@ -27,14 +27,36 @@ function Cart() {
                 }:\n`;
 
             groupedItems[type].forEach((item) => {
-                message += `- ${item.name} [${item.gender}] de (${item.size} ml) - S/${item.price}\n`;
+                let baseUrl =""
+
+                if (type === "decant") {
+                    baseUrl = "https://tienda-perfumes.vercel.app/decants/";
+                } else if (type === "exclusive") {
+                    baseUrl = "https://tienda-perfumes.vercel.app/exclusivos/";
+                } else if (type === "miniature") {
+                    baseUrl = "https://tienda-perfumes.vercel.app/miniaturas/";
+                } else if (type === "perfume") {
+                    // Determinar si es Tester o Sellado
+                    baseUrl = item.version === "Tester" ?
+                        "https://tienda-perfumes.vercel.app/tester/" :
+                        "https://tienda-perfumes.vercel.app/";
+                }
+
+                // type === "decant" ? "https://tienda-perfumes.vercel.app/decants/" :
+                // type === "exclusive" ? "https://tienda-perfumes.vercel.app/exclusivos/" :
+                // type === "miniature" ? "https://tienda-perfumes.vercel.app/miniaturas/" :
+                // "https://tienda-perfumes.vercel.app/perfumes/";
+
+                const productUrl = `${baseUrl}${item.path}`;
+
+                message += `- ${item.name}  [${item.gender}${type === "perfume" ? ` - ${item.version}` : ""}] de (${item.size} ml) - S/${item.price}\n (${productUrl})\n`;
             });
-            message += "\n";
+            // message += "\n";
         });
 
         // Codificar el mensaje para la URL de WhatsApp
         const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = `https://wa.me/51960153257?text=${encodedMessage}`; // Cambia xxxxxxxxxx por tu número de WhatsApp.
+        const whatsappURL = `https://wa.me/51948185895?text=${encodedMessage}`; // Cambia xxxxxxxxxx por tu número de WhatsApp.
 
         // Abrir WhatsApp
         window.open(whatsappURL, "_blank");
