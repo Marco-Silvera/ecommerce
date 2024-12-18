@@ -22,6 +22,11 @@ export const CartContextProvider = ({ children }) => {
         setCartItems((prevItems) => prevItems.filter((item) => item.id !== id)) // excluye item que tiene el id seleccionado y guarda ese nuevo array
     }
 
+    const isInCart = (id) => {
+        return cartItems.some((item) => item.id === id);
+    };
+    
+
     const clearCart = () => setCartItems([]);
 
     return (
@@ -29,6 +34,7 @@ export const CartContextProvider = ({ children }) => {
             cartItems,
             addCart,
             removeFromCart,
+            isInCart,
             clearCart
         }}>
             {children}
