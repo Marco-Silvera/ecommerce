@@ -45,7 +45,6 @@ function MiniatureFormEdit() {
         }
     }, [selectedMiniature]);
 
-    // Maneja el evento de submit y actualiza el perfume
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (selectedMiniature) {

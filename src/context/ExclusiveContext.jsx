@@ -28,7 +28,23 @@ export const ExclusiveContextProvider = ({ children }) => {
         setLoadingExclusive(false)
     }
 
-    const createExclusive = async (exclusiveName, exclusiveDescription, exclusivePath, exclusiveVersion, exclusiveGender, exclusiveBox, exclusiveBrand, exclusiveCollection, exclusiveConcentration, exclusiveSize, exclusivePrice, exclusiveImage, exclusiveImageTwo, exclusiveImageThree, exclusiveImageFour) => {
+    const createExclusive = async (
+        exclusiveName,
+        exclusiveDescription,
+        exclusivePath,
+        exclusiveVersion,
+        exclusiveGender,
+        exclusiveBox,
+        exclusiveBrand,
+        exclusiveCollection,
+        exclusiveConcentration,
+        exclusiveSize,
+        exclusivePrice,
+        exclusiveImage,
+        exclusiveImageTwo,
+        exclusiveImageThree,
+        exclusiveImageFour
+    ) => {
 
         setAddingExclusive(true)
         try {
@@ -74,7 +90,7 @@ export const ExclusiveContextProvider = ({ children }) => {
     const updateExclusive = async (updatedExclusive) => {
         setAddingUpdateExclusive(true)
         const { id, name, description, path, version, gender, box, brand, collection, concentration, size, price, image, imagetwo, imagethree, imagefour } = updatedExclusive;
-        console.log('Actualizando perfume con ID:', id);  // Para ver si el ID es correcto
+        console.log('Actualizando perfume con ID:', id);
         console.log('Exclusive actualizado data:', updatedExclusive);
         const { data, error } = await supabase
             .from('exclusives')
@@ -97,9 +113,9 @@ export const ExclusiveContextProvider = ({ children }) => {
             })
             .eq('id', id);
         if (error) {
-            console.error('Error actualizando exclusive:', error);  // Mostrar el error si falla
+            console.error('Error actualizando exclusive:', error);
         } else {
-            console.log('Actualización exitosa:', data);  // Verificar si el update fue exitoso
+            console.log('Actualización exitosa:', data);
             await getExclusives();  // Refresca la lista de exclusives
         }
 

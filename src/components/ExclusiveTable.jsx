@@ -4,9 +4,8 @@ import ExclusiveRowDashboard from "./ExclusiveRowDashboard";
 
 function ExclusiveTable() {
 
-    const { exclusives, getExclusives, loadingExclusive } = useExclusives()
-
-    const [filter, setFilter] = useState("added"); // Estado para el filtro y orden
+    const { exclusives, getExclusives, loadingExclusive } = useExclusives();
+    const [filter, setFilter] = useState("added");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredExclusives, setFilteredExclusives] = useState([]);
 
@@ -14,14 +13,12 @@ function ExclusiveTable() {
         getExclusives()
     }, [])
 
-
     useEffect(() => {
-        handleFilter(); // Ejecutar el filtro cada vez que cambie la opción seleccionada o los exclusives
+        handleFilter();
     }, [filter, searchTerm, exclusives]);
 
     function handleFilter() {
         let sortedExclusives = [...exclusives]; // Crear una copia de los exclusives
-
 
         if (searchTerm) {
             sortedExclusives = sortedExclusives.filter((exclusive) =>
@@ -158,7 +155,6 @@ function ExclusiveTable() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* Renderizar perfumes filtrados */}
                                 {filteredExclusives.length > 0 ? (
                                     filteredExclusives.map((exclusive) => (
                                         <ExclusiveRowDashboard key={exclusive.id} exclusive={exclusive} />

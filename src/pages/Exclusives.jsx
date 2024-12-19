@@ -9,16 +9,14 @@ function Exclusives() {
     const [exclusives, setExclusives] = useState([]);
     const [loadingExclusive, setLoadingExclusive] = useState(true);
 
-    // Función para obtener los exclusives desde la base de datos
     const fetchExclusives = async () => {
         try {
             const { data, error } = await supabase
-                .from('exclusives') // Nombre de la tabla
-                .select('*');     // Seleccionar todos los campos
+                .from('exclusives')
+                .select('*');
 
             if (error) throw error;
 
-            // Guardamos los datos de exclusives en el estado
             setExclusives(data);
         } catch (error) {
             console.error('Error fetching exclusives:', error);
@@ -27,7 +25,6 @@ function Exclusives() {
         }
     };
 
-    // useEffect para cargar los exclusives cuando el componente se monta
     useEffect(() => {
         fetchExclusives();
     }, []);

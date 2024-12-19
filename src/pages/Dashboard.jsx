@@ -17,6 +17,7 @@ import DecantTable from "../components/DecantTable";
 import MiniatureForm from "../components/MiniatureForm";
 import MiniatureFormEdit from "../components/MiniatureFormEdit";
 import MiniatureTable from "../components/MiniatureTable";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

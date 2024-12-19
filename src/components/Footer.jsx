@@ -7,8 +7,8 @@ function Footer() {
                 <div className="md:flex md:justify-between md:items-center">
                     <div className="mb-6 md:mb-0">
                         <a href="https://github.com/Marco-Silvera" className="flex items-center">
-                            <img src="https://pbs.twimg.com/profile_images/1533454803/isotipo_400x400.jpg" className="h-8 me-3" alt="FlowBite Logo" />
-                            <span className="self-center text-lg md:text-2xl font-semibold whitespace-nowrap">Perfumerias Unidas</span>
+                            <img src="https://pbs.twimg.com/profile_images/1533454803/isotipo_400x400.jpg" className="h-8 me-3" alt="Logo de tienda" />
+                            <span className="self-center text-lg md:text-2xl font-semibold whitespace-nowrap">PU</span>
                         </a>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6">
@@ -22,7 +22,7 @@ function Footer() {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
-                    <span className="text-sm text-gray-500 sm:text-center">© 2024 <a href="https://www.linkedin.com/in/marcosilvera/" className="hover:underline">Perfumerias Unidas</a>. Todos los derechos reservados.
+                    <span className="text-sm text-gray-500 sm:text-center">© 2024 <a href="https://www.linkedin.com/in/marcosilvera/" className="hover:underline">PU</a>. Todos los derechos reservados.
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0 gap-2 items-center">
                         <p className='text-xs text-gray-500 font-light'>Desarrollado por:</p>

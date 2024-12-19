@@ -4,9 +4,8 @@ import DecantRowDashboard from "./DecantRowDashboard";
 
 function DecantTable() {
 
-    const { decants, getDecants, loadingDecant } = useDecants()
-
-    const [filter, setFilter] = useState("added"); // Estado para el filtro y orden
+    const { decants, getDecants, loadingDecant } = useDecants();
+    const [filter, setFilter] = useState("added");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredDecants, setFilteredDecants] = useState([]);
 
@@ -14,14 +13,12 @@ function DecantTable() {
         getDecants()
     }, [])
 
-
     useEffect(() => {
-        handleFilter(); // Ejecutar el filtro cada vez que cambie la opción seleccionada o los perfumes
+        handleFilter();
     }, [filter, searchTerm, decants]);
 
     function handleFilter() {
         let sortedDecants = [...decants]; // Crear una copia de los perfumes
-
 
         if (searchTerm) {
             sortedDecants = sortedDecants.filter((decant) =>
@@ -149,13 +146,11 @@ function DecantTable() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* Renderizar perfumes filtrados */}
                                 {filteredDecants.length > 0 ? (
                                     filteredDecants.map((decant) => (
                                         <DecantRowDashboard key={decant.id} decant={decant} />
                                     ))
                                 ) : (
-                                    // Mostrar mensaje dentro de un <tr> cuando no hay coincidencias
                                     <tr>
                                         <td colSpan="12" className="text-center py-4 h-[20vh]">
                                             No se encontraron coincidencias

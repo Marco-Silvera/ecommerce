@@ -55,7 +55,7 @@ function DecantDetailPage() {
         <section className='flex flex-col min-h-screen'>
             <Header />
             <main className="flex-grow max-w-[1500px] mx-auto px-5 pt-5 pb-20 md:p-10">
-                <section className='flex flex-col items-center   lg:flex-row gap-5 md:gap-10'>
+                <section className='flex flex-col items-center lg:flex-row gap-5 md:gap-10'>
                     <DecantGallery image={decant.image}
                         imagetwo={decant.imagetwo}
                         imagethree={decant.imagethree}
@@ -101,7 +101,6 @@ function DecantDetailPage() {
                                         >
                                             Añadir al carrito
                                         </button>
-                                        <Toaster />
                                     </>
                                 )}
                             </div>

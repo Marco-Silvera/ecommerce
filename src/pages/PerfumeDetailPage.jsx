@@ -45,7 +45,7 @@ function PerfumeDetailPage() {
     const handleAddToCart = () => {
         if (!isInCart(perfume.id)) {
             addCart(perfume);
-            Swal.fire(`${miniature.name} fue añadido al carrito.`);
+            Swal.fire(`${perfume.name} fue añadido al carrito.`);
         }
     }
 
@@ -55,7 +55,7 @@ function PerfumeDetailPage() {
         <section className='flex flex-col min-h-screen'>
             <Header />
             <main className="flex-grow max-w-[1500px] mx-auto px-5 pt-5 pb-20 md:p-10">
-                <section className='flex flex-col items-center   lg:flex-row gap-5 md:gap-10'>
+                <section className='flex flex-col items-center lg:flex-row gap-5 md:gap-10'>
                     <PerfumeGallery image={perfume.image}
                         imagetwo={perfume.imagetwo}
                         imagethree={perfume.imagethree}

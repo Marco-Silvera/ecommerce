@@ -22,7 +22,7 @@ function Register() {
                 password,
             });
 
-            if (error) throw error; // Muestra error si falla el registro
+            if (error) throw error;
 
             // Si el registro es exitoso, redirige a login
             navigate('/login');

@@ -28,7 +28,19 @@ export const MiniatureContextProvider = ({ children }) => {
         setLoadingMiniature(false)
     }
 
-    const createMiniature = async (miniatureName, miniatureDescription, miniaturePath, miniatureGender, miniatureBrand, miniatureConcentration, miniatureSize, miniaturePrice, miniatureImage, miniatureImageTwo, miniatureImageThree) => {
+    const createMiniature = async (
+        miniatureName,
+        miniatureDescription,
+        miniaturePath,
+        miniatureGender,
+        miniatureBrand,
+        miniatureConcentration,
+        miniatureSize,
+        miniaturePrice,
+        miniatureImage,
+        miniatureImageTwo,
+        miniatureImageThree
+    ) => {
 
         setAddingMiniature(true)
         try {
@@ -70,7 +82,7 @@ export const MiniatureContextProvider = ({ children }) => {
     const updateMiniature = async (updatedMiniature) => {
         setAddingUpdateMiniature(true)
         const { id, name, description, path, gender, brand, concentration, size, price, image, imagetwo, imagethree } = updatedMiniature;
-        console.log('Actualizando perfume con ID:', id);  // Para ver si el ID es correcto
+        console.log('Actualizando perfume con ID:', id);
         console.log('Miniature actualizado data:', updatedMiniature);
         const { data, error } = await supabase
             .from('miniatures')
@@ -89,9 +101,9 @@ export const MiniatureContextProvider = ({ children }) => {
             })
             .eq('id', id);
         if (error) {
-            console.error('Error actualizando miniature:', error);  // Mostrar el error si falla
+            console.error('Error actualizando miniature:', error);
         } else {
-            console.log('Actualización exitosa:', data);  // Verificar si el update fue exitoso
+            console.log('Actualización exitosa:', data);
             await getMiniatures();  // Refresca la lista de exclusives
         }
 

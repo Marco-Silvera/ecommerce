@@ -36,7 +36,7 @@ function Cart() {
                 } else if (type === "miniature") {
                     baseUrl = "https://tienda-perfumes.vercel.app/miniaturas/";
                 } else if (type === "perfume") {
-                    // Determinar si es Tester o Sellado
+                    // Cambia el url segun la version del perfume
                     baseUrl = item.version === "Tester" ?
                         "https://tienda-perfumes.vercel.app/tester/" :
                         "https://tienda-perfumes.vercel.app/";
@@ -48,11 +48,12 @@ function Cart() {
             });
         });
 
-        // Codificar el mensaje para la URL de WhatsApp
+        // Codifica el mensaje en un string válido para URL
         const encodedMessage = encodeURIComponent(message);
+
         const whatsappURL = `https://wa.me/51960153257?text=${encodedMessage}`;
 
-        // Abrir WhatsApp
+        // Abrie WhatsApp en una nueva ventana
         window.open(whatsappURL, "_blank");
 
         clearCart();

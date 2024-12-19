@@ -28,7 +28,22 @@ export const PerfumeContextProvider = ({ children }) => {
         setLoading(false)
     }
 
-    const createPerfume = async (perfumeName, perfumeDescription, perfumePath, perfumeVersion, perfumeGender, perfumeBox, perfumeBrand, perfumeConcentration, perfumeSize, perfumePrice, perfumeImage, perfumeImageTwo, perfumeImageThree, perfumeImageFour) => {
+    const createPerfume = async (
+        perfumeName,
+        perfumeDescription,
+        perfumePath,
+        perfumeVersion,
+        perfumeGender,
+        perfumeBox,
+        perfumeBrand,
+        perfumeConcentration,
+        perfumeSize,
+        perfumePrice,
+        perfumeImage,
+        perfumeImageTwo,
+        perfumeImageThree,
+        perfumeImageFour
+    ) => {
 
         setAdding(true)
         try {
@@ -73,7 +88,7 @@ export const PerfumeContextProvider = ({ children }) => {
     const updatePerfume = async (updatedPerfume) => {
         setAddingUpdate(true)
         const { id, name, description, path, version, gender, box, brand, concentration, size, price, image, imagetwo, imagethree, imagefour } = updatedPerfume;
-        console.log('Actualizando perfume con ID:', id);  // Para ver si el ID es correcto
+        console.log('Actualizando perfume con ID:', id);
         console.log('Perfume actualizado data:', updatedPerfume);
         const { data, error } = await supabase
             .from('perfumes')
@@ -95,9 +110,9 @@ export const PerfumeContextProvider = ({ children }) => {
             })
             .eq('id', id);
         if (error) {
-            console.error('Error actualizando perfume:', error);  // Mostrar el error si falla
+            console.error('Error actualizando perfume:', error);
         } else {
-            console.log('Actualización exitosa:', data);  // Verificar si el update fue exitoso
+            console.log('Actualización exitosa:', data);
             await getPerfumes();  // Refresca la lista de perfumes
         }
 

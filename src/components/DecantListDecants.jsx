@@ -4,9 +4,8 @@ import DecantCardDecants from "./DecantCardDecants";
 
 function DecantListDecants() {
 
-    const { decants, getDecants, loadingDecant } = useDecants()
-
-    const [filter, setFilter] = useState("added"); // Estado para el filtro y orden
+    const { decants, getDecants, loadingDecant } = useDecants();
+    const [filter, setFilter] = useState("added");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredDecants, setfilteredDecants] = useState([]);
     const [visibleCount, setVisibleCount] = useState(20);
@@ -15,14 +14,12 @@ function DecantListDecants() {
         getDecants()
     }, [])
 
-
     useEffect(() => {
-        handleFilter(); // Ejecutar el filtro cada vez que cambie la opción seleccionada o los decants
+        handleFilter();
     }, [filter, searchTerm, decants]);
 
     function handleFilter() {
         let sortedDecants = [...decants]; // Crear una copia de los decants
-
 
         if (searchTerm) {
             sortedDecants = sortedDecants.filter((decant) =>

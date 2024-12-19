@@ -22,7 +22,7 @@ function Login() {
                 password,
             });
 
-            if (error) throw error; // Lanza el error si no se logra iniciar sesión
+            if (error) throw error;
 
             // Si el login es exitoso, redirigir al dashboard
             navigate('/dashboard');

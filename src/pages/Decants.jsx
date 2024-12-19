@@ -13,26 +13,23 @@ function Decants() {
     const fetchDecants = async () => {
         try {
             const { data, error } = await supabase
-                .from('decants') // Nombre de la tabla
-                .select('*');     // Seleccionar todos los campos
+                .from('decants')
+                .select('*');
 
             if (error) throw error;
 
-            // Guardamos los datos de decants en el estado
             setDecants(data);
         } catch (error) {
             console.error('Error fetching decants:', error);
         } finally {
-            setLoadingDecant(false); // Dejamos de mostrar el loadingDecant
+            setLoadingDecant(false);
         }
     };
 
-    // useEffect para cargar los decants cuando el componente se monta
     useEffect(() => {
         fetchDecants();
     }, []);
 
-    // Si está cargando, mostramos un mensaje de carga
     if (loadingDecant) {
         return <div className='h-screen flex items-center justify-center font-light italic'>Cargando decants...</div>;
     }

@@ -28,7 +28,23 @@ export const DecantContextProvider = ({ children }) => {
         setLoadingDecant(false)
     }
 
-    const createDecant = async (decantName, decantDescription, decantPath, decantGender, decantBrand, decantConcentration, decantSize, decantSizeTwo, decantSizeThree, decantPrice, decantPriceTwo, decantPriceThree, decantImage, decantImageTwo, decantImageThree) => {
+    const createDecant = async (
+        decantName,
+        decantDescription,
+        decantPath,
+        decantGender,
+        decantBrand,
+        decantConcentration,
+        decantSize,
+        decantSizeTwo,
+        decantSizeThree,
+        decantPrice,
+        decantPriceTwo,
+        decantPriceThree,
+        decantImage,
+        decantImageTwo,
+        decantImageThree
+    ) => {
 
         setAddingDecant(true)
         try {
@@ -97,9 +113,9 @@ export const DecantContextProvider = ({ children }) => {
             })
             .eq('id', id);
         if (error) {
-            console.error('Error actualizando decant:', error);  // Mostrar el error si falla
+            console.error('Error actualizando decant:', error);
         } else {
-            console.log('Actualización exitosa:', data);  // Verificar si el update fue exitoso
+            console.log('Actualización exitosa:', data);
             await getDecants();  // Refresca la lista de perfumes
         }
 

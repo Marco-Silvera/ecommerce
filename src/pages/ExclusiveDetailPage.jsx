@@ -16,7 +16,7 @@ function ExclusiveDetailPage() {
 
     useEffect(() => {
         const fetchExclusive = async () => {
-            setLoading(true); // Inicia la carga cuando cambia el path
+            setLoading(true);
             try {
                 const { data, error } = await supabase
                     .from('exclusives')

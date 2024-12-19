@@ -4,9 +4,8 @@ import MiniatureRowDashboard from "./MiniatureRowDashboard";
 
 function MiniatureTable() {
 
-    const { miniatures, getMiniatures, loadingMiniature } = useMiniatures()
-
-    const [filter, setFilter] = useState("added"); // Estado para el filtro y orden
+    const { miniatures, getMiniatures, loadingMiniature } = useMiniatures();
+    const [filter, setFilter] = useState("added");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredMiniatures, setFilteredMiniatures] = useState([]);
 
@@ -14,14 +13,12 @@ function MiniatureTable() {
         getMiniatures()
     }, [])
 
-
     useEffect(() => {
-        handleFilter(); // Ejecutar el filtro cada vez que cambie la opción seleccionada o los miniatures
+        handleFilter();
     }, [filter, searchTerm, miniatures]);
 
     function handleFilter() {
         let sortedMiniatures = [...miniatures]; // Crear una copia de los miniatures
-
 
         if (searchTerm) {
             sortedMiniatures = sortedMiniatures.filter((miniature) =>
@@ -139,13 +136,11 @@ function MiniatureTable() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* Renderizar perfumes filtrados */}
                                 {filteredMiniatures.length > 0 ? (
                                     filteredMiniatures.map((miniature) => (
                                         <MiniatureRowDashboard key={miniature.id} miniature={miniature} />
                                     ))
                                 ) : (
-                                    // Mostrar mensaje dentro de un <tr> cuando no hay coincidencias
                                     <tr>
                                         <td colSpan="12" className="text-center py-4 h-[20vh]">
                                             No se encontraron coincidencias

@@ -23,7 +23,6 @@ function DecantFormEdit() {
     const { selectedDecant, updateDecant, addingUpdateDecant } = useDecants();
     const [formData, setFormData] = useState(initialFormState);
 
-
     const generatePathFromName = (name) => {
         return name
             .toLowerCase()
@@ -54,7 +53,6 @@ function DecantFormEdit() {
         }
     }, [selectedDecant]);
 
-    // Maneja el evento de submit y actualiza el perfume
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (selectedDecant) {

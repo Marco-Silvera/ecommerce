@@ -4,9 +4,8 @@ import PerfumeRowDashboard from "./PerfumeRowDashboard";
 
 function PerfumeTable() {
 
-    const { perfumes, getPerfumes, loading } = usePerfumes()
-
-    const [filter, setFilter] = useState("added"); // Estado para el filtro y orden
+    const { perfumes, getPerfumes, loading } = usePerfumes();
+    const [filter, setFilter] = useState("added");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredPerfumes, setFilteredPerfumes] = useState([]);
 
@@ -14,14 +13,12 @@ function PerfumeTable() {
         getPerfumes()
     }, [])
 
-
     useEffect(() => {
-        handleFilter(); // Ejecutar el filtro cada vez que cambie la opción seleccionada o los perfumes
+        handleFilter();
     }, [filter, searchTerm, perfumes]);
 
     function handleFilter() {
         let sortedPerfumes = [...perfumes]; // Crear una copia de los perfumes
-
 
         if (searchTerm) {
             sortedPerfumes = sortedPerfumes.filter((perfume) =>
@@ -158,7 +155,6 @@ function PerfumeTable() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* Renderizar perfumes filtrados */}
                                 {filteredPerfumes.length > 0 ? (
                                     filteredPerfumes.map((perfume) => (
                                         <PerfumeRowDashboard key={perfume.id} perfume={perfume} />

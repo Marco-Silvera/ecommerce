@@ -4,9 +4,8 @@ import PerfumeCardHomePage from "./PerfumeCardHomePage";
 
 function PerfumeListHomePage() {
 
-    const { perfumes, getPerfumes, loading } = usePerfumes()
-
-    const [filter, setFilter] = useState("added"); // Estado para el filtro y orden
+    const { perfumes, getPerfumes, loading } = usePerfumes();
+    const [filter, setFilter] = useState("added");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredPerfumes, setFilteredPerfumes] = useState([]);
     const [visibleCount, setVisibleCount] = useState(20);
@@ -15,14 +14,12 @@ function PerfumeListHomePage() {
         getPerfumes()
     }, [])
 
-
     useEffect(() => {
-        handleFilter(); // Ejecutar el filtro cada vez que cambie la opción seleccionada o los perfumes
+        handleFilter();
     }, [filter, searchTerm, perfumes]);
 
     function handleFilter() {
         let sortedPerfumes = [...perfumes]; // Crear una copia de los perfumes
-
 
         if (searchTerm) {
             sortedPerfumes = sortedPerfumes.filter((perfume) =>
@@ -56,10 +53,6 @@ function PerfumeListHomePage() {
 
         setFilteredPerfumes(sortedPerfumes);
         setVisibleCount(20);
-    }
-
-    function showMorePerfumes() {
-        setVisibleCount((prevVisibleCount) => prevVisibleCount + 40);
     }
 
     function renderPerfumes() {

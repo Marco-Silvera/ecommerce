@@ -9,7 +9,6 @@ function HomePage() {
     const [perfumes, setPerfumes] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Función para obtener los perfumes desde la base de datos
     const fetchPerfumes = async () => {
         try {
             const { data, error } = await supabase
@@ -17,7 +16,6 @@ function HomePage() {
                 .select('*');
             if (error) throw error;
 
-            // Guarda los datos de perfumes en el estado
             setPerfumes(data);
         } catch (error) {
             console.error('Error fetching perfumes:', error);

@@ -4,9 +4,8 @@ import MiniatureCardMiniatures from "./MiniatureCardMiniatures";
 
 function MiniatureListMiniature() {
 
-    const { miniatures, getMiniatures, loadingMiniature } = useMiniatures()
-
-    const [filter, setFilter] = useState("added"); // Estado para el filtro y orden
+    const { miniatures, getMiniatures, loadingMiniature } = useMiniatures();
+    const [filter, setFilter] = useState("added");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredMiniatures, setFilteredMiniatures] = useState([]);
 
@@ -14,14 +13,12 @@ function MiniatureListMiniature() {
         getMiniatures()
     }, [])
 
-
     useEffect(() => {
-        handleFilter(); // Ejecutar el filtro cada vez que cambie la opción seleccionada o los miniatures
+        handleFilter();
     }, [filter, searchTerm, miniatures]);
 
     function handleFilter() {
         let sortedMiniatures = [...miniatures]; // Crear una copia de los miniatures
-
 
         if (searchTerm) {
             sortedMiniatures = sortedMiniatures.filter((miniature) =>
@@ -109,7 +106,6 @@ function MiniatureListMiniature() {
                         </div>
                     </div>
                     <section className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10">
-                        {/* Renderizar miniatures filtrados */}
                         {filteredMiniatures.length > 0 ? (
                             filteredMiniatures.map((miniatureIterator) => (
                                 <MiniatureCardMiniatures key={miniatureIterator.id} miniature={miniatureIterator} />
