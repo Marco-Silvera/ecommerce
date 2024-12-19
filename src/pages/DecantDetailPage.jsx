@@ -6,7 +6,6 @@ import Footer from '../components/Footer';
 import DecantGallery from '../components/DecantGallery';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import toast, { Toaster } from 'react-hot-toast';
 import Swal from 'sweetalert2'
 
 function DecantDetailPage() {
