@@ -45,7 +45,21 @@ function DecantDetailPage() {
     const handleAddToCart = () => {
         if (!isInCart(decant.id)) {
             addCart(decant);
-            Swal.fire(`${decant.name} fue añadido al carrito.`);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: `${decant.name} fue añadido al carrito.`
+            });
         }
     }
 

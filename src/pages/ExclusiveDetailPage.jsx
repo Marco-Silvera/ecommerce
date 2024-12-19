@@ -12,7 +12,7 @@ function ExclusiveDetailPage() {
     const { path } = useParams();
     const [exclusive, setExclusive] = useState(null);
     const [loading, setLoading] = useState(true);
-    const {addCart, isInCart} = useCart();
+    const { addCart, isInCart } = useCart();
 
     useEffect(() => {
         const fetchExclusive = async () => {
@@ -45,7 +45,21 @@ function ExclusiveDetailPage() {
     const handleAddToCart = () => {
         if (!isInCart(exclusive.id)) {
             addCart(exclusive);
-            Swal.fire(`${exclusive.name} fue añadido al carrito.`);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: `${exclusive.name} fue añadido al carrito.`
+            });
         }
     }
 

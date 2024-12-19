@@ -45,7 +45,21 @@ function PerfumeDetailPage() {
     const handleAddToCart = () => {
         if (!isInCart(miniature.id)) {
             addCart(miniature);
-            Swal.fire(`${miniature.name} fue añadido al carrito.`);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: `${miniature.name} fue añadido al carrito.`
+            });
         }
     }
 
