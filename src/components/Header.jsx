@@ -117,7 +117,7 @@ function Header() {
                             >
                                 <Link
                                     to={`/cart`}
-                                    className="text-gray-600 hover:text-gray-900 text-base font-medium transition-colors h-full w-ful flex items-center justify-center">Carrito</Link>
+                                    className="text-gray-600 hover:text-gray-900 text-base font-medium transition-colors h-full w-ful flex items-center justify-center"><img className="h-6" src="/carritodecompras.svg" alt="Carrito de compras" /></Link>
                             </li>
                             <li
                                 className="hover:bg-gray-200 xl:hover:bg-transparent w-full h-10 xl:w-auto xl:h-auto"

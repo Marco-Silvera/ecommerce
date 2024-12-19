@@ -21,13 +21,13 @@ function Cart() {
         // Generar mensaje agrupado por tipo
         Object.keys(groupedItems).forEach((type) => {
             message += `${type === "decant" ? "Decants"
-                    : type === "exclusive" ? "Exclusivos"
-                        : type === "miniature" ? "Miniaturas"
-                            : "Perfumes"
+                : type === "exclusive" ? "Exclusivos"
+                    : type === "miniature" ? "Miniaturas"
+                        : "Perfumes"
                 }:\n`;
 
             groupedItems[type].forEach((item) => {
-                let baseUrl =""
+                let baseUrl = ""
 
                 if (type === "decant") {
                     baseUrl = "https://tienda-perfumes.vercel.app/decants/";
@@ -42,26 +42,19 @@ function Cart() {
                         "https://tienda-perfumes.vercel.app/";
                 }
 
-                // type === "decant" ? "https://tienda-perfumes.vercel.app/decants/" :
-                // type === "exclusive" ? "https://tienda-perfumes.vercel.app/exclusivos/" :
-                // type === "miniature" ? "https://tienda-perfumes.vercel.app/miniaturas/" :
-                // "https://tienda-perfumes.vercel.app/perfumes/";
-
                 const productUrl = `${baseUrl}${item.path}`;
 
                 message += `- ${item.name}  [${item.gender}${type === "perfume" ? ` - ${item.version}` : ""}] de (${item.size} ml) - S/${item.price}\n (${productUrl})\n`;
             });
-            // message += "\n";
         });
 
         // Codificar el mensaje para la URL de WhatsApp
         const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = `https://wa.me/51948185895?text=${encodedMessage}`; // Cambia xxxxxxxxxx por tu número de WhatsApp.
+        const whatsappURL = `https://wa.me/51960153257?text=${encodedMessage}`;
 
         // Abrir WhatsApp
         window.open(whatsappURL, "_blank");
 
-        // Vaciar el carrito después de enviar
         clearCart();
     };
 
@@ -91,12 +84,12 @@ function Cart() {
                             }
                         </h3>
                         <section className="relative overflow-x-auto">
-                            <table className="w-full text-sm text-left text-gray-500 table-fixed rtl:text-right">
+                            <table className="w-full overflow-x-auto text-sm text-left text-gray-500 table-fixed rtl:text-right">
                                 <thead className="text-xs text-gray-700 uppercase">
-                                    <th className="text-start px-6 py-3">Nombre</th>
-                                    <th className="text-start px-6 py-3"></th>
-                                    <th className="text-start px-6 py-3">Tamaño</th>
-                                    <th className="text-start px-6 py-3">Precio</th>
+                                    <th className="text-start px-0 sm:px-6 py-3">Nombre</th>
+                                    <th className="text-start px-0 sm:px-6 py-3"></th>
+                                    <th className="text-start px-0 sm:px-6 py-3">Tamaño</th>
+                                    <th className="text-start px-0 sm:px-6 py-3">Precio</th>
                                 </thead>
                                 <tbody>
                                     {groupedItems[type].map((item) => {
@@ -112,73 +105,36 @@ function Cart() {
                                         }
 
                                         return (
-                                            <tr key={item.id} className="border-b">
-                                                <td className="px-6 py-4">
+                                            <tr key={item.id} className="border-b mb-2 sm:mb-0">
+                                                <td className="px-0 sm:px-6 py-4">
                                                     <a className="hover:text-gray-700" href={path} target="_blank">{item.name}</a>
                                                 </td>
-                                                <td className="px-6 py-4">
+                                                <td className="px-0 sm:px-6 py-4">
                                                     <a href={path} target="_blank">
                                                         <img
-                                                            className="h-20"
+                                                            className="h-10 sm:h-20"
                                                             src={item.image}
                                                             alt={`Perfume ${item.type} - ${item.name}`}
                                                         />
                                                     </a>
                                                 </td>
-                                                <td className="px-6 py-4">{item.size} ml</td>
-                                                <td className="px-6 py-4">{item.price}</td>
-                                                <td className=" px-6 py-4 w-[100px]">
-                                                    <div className="flex justify-end items-center h-full">
+                                                <td className="px-0 sm:px-6 py-4">{item.size} ml</td>
+                                                <td className="px-0 sm:px-6 py-4">{item.price}</td>
+                                                <td className="px-0 sm:px-6 py-4 w-[100px]">
+                                                    <div className="flex justify-center sm:justify-end items-center h-full">
                                                         <button
                                                             onClick={() => removeFromCart(item.id)}
-                                                            className="text-red-600 font-semibold hover:underline rounded"
                                                         >
-                                                            Eliminar
+                                                            <img className="h-5" src="/eliminar.svg" alt="Eliminar del carrito" />
                                                         </button>
                                                     </div>
                                                 </td>
                                             </tr>
                                         );
                                     })}
-                                    {/* {groupedItems[type].map((item) => (
-                                    <tr key={item.id} className="border-b">
-                                        <td className="px-6 py-4"><a href={item.path}>{item.name}</a></td>
-                                        <td className="px-6 py-4"><img className="h-20" src={item.image} alt={`Perfume ${item.type} - ${item.name}`} /></td>
-                                        <td className="px-6 py-4">{item.size}</td>
-                                        <td className="px-6 py-4">{item.price}</td>
-                                        <td className="h-full place-self-end items-center px-6 py-4">
-                                        <button
-                                        onClick={() => removeFromCart(item.id)}
-                                        className="text-red-600 font-semibold hover:underline rounded"
-                                        >Eliminar</button>
-                                        </td>
-                                        </tr>
-                                        ))} */}
                                 </tbody>
                             </table>
                         </section>
-                        {/* <table className="w-full table-fixed">
-                            <thead>
-                                <th className="text-start">Nombre</th>
-                                <th className="text-start">Tamaño</th>
-                                <th className="text-start">Precio</th>
-                                </thead>
-                                <tbody className="w-full max-w-[1460px]">
-                                {groupedItems[type].map((item) => (
-                                    <tr key={item.id} className="mb-3">
-                                        <td>{item.name}</td>
-                                        <td>{item.size}</td>
-                                        <td>{item.price}</td>
-                                        <td className="flex place-self-end">
-                                            <button
-                                                onClick={() => removeFromCart(item.id)}
-                                                className="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700"
-                                            >Eliminar</button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table> */}
                     </div>
                 ))}
                 <div className="flex justify-between mt-5">
@@ -190,9 +146,12 @@ function Cart() {
                     </button>
                     <button
                         onClick={sendToWhatsApp}
-                        className="bg-green-500 text-white py-2 px-5 rounded hover:bg-green-600"
+                        className="bg-green-500 text-white py-2 px-5 rounded hover:bg-green-600 flex gap-5"
                     >
-                        Enviar a WhatsApp
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.52 3.483A11.625 11.625 0 0012.015 0C5.378 0 .039 5.338.039 11.929c0 2.105.548 4.163 1.587 5.985l-1.664 6.086 6.215-1.628c1.739.951 3.7 1.455 5.672 1.455h.005c6.635 0 11.98-5.339 11.98-11.929 0-3.189-1.242-6.189-3.516-8.415zM12.02 21.617c-1.735 0-3.462-.457-4.95-1.319l-.354-.206-3.686.964.984-3.599-.224-.37a9.429 9.429 0 01-1.438-4.941c0-5.209 4.243-9.453 9.458-9.453a9.35 9.35 0 016.667 2.756 9.398 9.398 0 012.791 6.697c0 5.209-4.244 9.454-9.458 9.454zm5.237-7.17c-.29-.144-1.708-.843-1.973-.938-.264-.096-.456-.144-.647.144-.192.288-.743.938-.912 1.13-.168.192-.335.215-.626.072-.29-.144-1.22-.448-2.32-1.43-.857-.765-1.436-1.71-1.604-2-.168-.288-.018-.443.126-.587.13-.129.288-.336.432-.505.144-.168.192-.288.288-.48.096-.192.048-.36-.024-.504-.072-.144-.648-1.56-.89-2.137-.235-.564-.473-.488-.648-.488h-.557c-.192 0-.503.072-.764.36-.263.288-1.002.977-1.002 2.376s1.027 2.754 1.17 2.946c.144.192 2.02 3.088 4.895 4.332.684.296 1.22.472 1.637.604.687.216 1.313.185 1.807.112.551-.082 1.708-.7 1.95-1.375.24-.672.24-1.249.168-1.375-.073-.12-.264-.192-.553-.336z" />
+                        </svg>
+                        <span>Enviar a WhatsApp</span>
                     </button>
                 </div>
             </section>
