@@ -19,7 +19,7 @@ function HomePage() {
 
             setPerfumes(data);
         } catch (error) {
-            console.error('Error fetching perfumes:', error);
+            console.error('Error al obteners perfumes:', error);
         } finally {
             setLoading(false);
         }

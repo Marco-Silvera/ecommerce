@@ -20,7 +20,7 @@ function Decants() {
 
             setDecants(data);
         } catch (error) {
-            console.error('Error fetching decants:', error);
+            console.error('Error al obtener decants:', error);
         } finally {
             setLoadingDecant(false);
         }

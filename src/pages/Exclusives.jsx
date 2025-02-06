@@ -19,7 +19,7 @@ function Exclusives() {
 
             setExclusives(data);
         } catch (error) {
-            console.error('Error fetching exclusives:', error);
+            console.error('Error al obtener exclusivos:', error);
         } finally {
             setLoadingExclusive(false);
         }
